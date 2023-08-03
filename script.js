@@ -28,21 +28,18 @@ window.addEventListener("load", function() {
     const button = document.getElementById("formSubmit");
 
     button.addEventListener("click", function(event){
+        event.preventDefault();
         if(validateInput(pilot.value) === "Empty" || validateInput(copilot.value) === "Empty" ||  validateInput(fuelLevel.value) === "Empty" || validateInput(cargoLevel.value) === "Empty"){
             alert("All Field are required");
-            event.preventDefault();
         }
         else if(validateInput(pilot.value) === "Is a Number" || validateInput(copilot.value) === "Is a Number"){
             alert("Pilot name and CoPilot name should be text");
-            event.preventDefault();
         }
         else if(validateInput(fuelLevel.value) === "Not a Number" || validateInput(cargoLevel.value) === "Not a Number"){
             alert("Fuel Level and Cargo Level should be a number");
-            event.preventDefault();
         }
         else{
             formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
-            event.preventDefault();
         }
     
     });
