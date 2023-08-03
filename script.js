@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
     });
 
     const list = document.getElementById("faultyItems");
- 
+    list.style.visibility = "hidden";
     const pilot = document.querySelector("input[name=pilotName]");
     const copilot = document.querySelector("input[name=copilotName]");
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
